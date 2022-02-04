@@ -2,19 +2,12 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-  getAuth
 } from "firebase/auth";
-
-
-import { getFirestore } from "firebase/firestore";
-
+import { auth, database } from "../../../config/firebase";
 
 import { doc, onSnapshot } from "firebase/firestore";
 
 import { USER_STATE_CHANGE } from "../constants";
-
-const auth = getAuth();
-const firestore = getFirestore();
 
 export const userAuthStateListener = () => (dispatch) => {
   onAuthStateChanged(auth, (user) => {
@@ -27,7 +20,7 @@ export const userAuthStateListener = () => (dispatch) => {
 };
 
 export const getCurrentUserData = () => {
-  onSnapshot(doc(firestore, "users", auth.currentUser.uid), (res) => {
+  onSnapshot(doc(database, "users", auth.currentUser.uid), (res) => {
     if (res.exists) {
       return dispatch({
         type: USER_STATE_CHANGE,
