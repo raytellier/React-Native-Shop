@@ -19,7 +19,7 @@ export const userAuthStateListener = () => (dispatch) => {
   });
 };
 
-export const getCurrentUserData = () => {
+export const getCurrentUserData = () => dispatch => {
   onSnapshot(doc(database, "users", auth.currentUser.uid), (res) => {
     if (res.exists) {
       return dispatch({
