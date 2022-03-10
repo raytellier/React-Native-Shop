@@ -1,1 +1,8 @@
+// User Constants
 export const USER_STATE_CHANGE = "USER_STATE_CHANGE";
+
+// Product Constants
+export const PRODUCT_LIST_REQUEST = "PRODUCT_LIST_REQUEST";
+export const PRODUCT_LIST_SUCCESS = "PRODUCT_LIST_SUCCESS";
+export const PRODUCT_LIST_FAIL = "PRODUCT_LIST_FAIL";
+export const PRODUCT_STATE_CHANGE = "PRODUCT_STATE_CHANGE";

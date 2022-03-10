@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { Feather } from "@expo/vector-icons";
+import ShopScreen from "../../screens/shop";
 
 // Create bottom tab nav
 const Tab = createMaterialBottomTabNavigator();
@@ -29,7 +30,7 @@ export default function HomeScreen() {
       />
       <Tab.Screen
         name="shop"
-        component={EmptyScreen}
+        component={ShopScreen}
         options={{
           tabBarIcon: ({ color }) => {
             <Feather name="search" size={24} color={color} />;
